@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://0dvmbhrkik8g"]
+
+[ext_resource type="Script" uid="uid://cbnu7cyg0av70" path="res://addons/rubber_charter/rulesets/mania/Mania.gd" id="1_it15v"]
+[ext_resource type="PackedScene" uid="uid://5wvs60ywhok0" path="res://addons/rubber_charter/rulesets/mania/ManiaBarLineTemplate.tscn" id="2_gpadx"]
+
+[node name="Mania" type="Control" node_paths=PackedStringArray("bar_line_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_it15v")
+bar_line_container = NodePath("BarLineContainer")
+bar_line_template = ExtResource("2_gpadx")
+
+[node name="BarLineContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1

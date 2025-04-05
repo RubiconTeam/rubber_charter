@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://5wvs60ywhok0"]
+
+[ext_resource type="Script" uid="uid://r4xyoahfe1o7" path="res://addons/rubber_charter/rulesets/mania/classes/EditorManiaBarLine.gd" id="1_lwmpv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8fvq7"]
+
+[node name="ManiaBarLineTemplate" type="Control" node_paths=PackedStringArray("note_container", "bar_line_label")]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lwmpv")
+note_directions = PackedStringArray("left", "down", "up", "right")
+note_container = NodePath("NoteContainer")
+bar_line_label = NodePath("Panel/Label")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.037037
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bar Line Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoteContainer" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.04
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+texture = SubResource("PlaceholderTexture2D_8fvq7")

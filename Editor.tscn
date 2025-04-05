@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2yy8uksej406"]
+
+[ext_resource type="Script" uid="uid://bg6tf6i3woix" path="res://addons/rubber_charter/Editor.gd" id="1_rjg75"]
+[ext_resource type="PackedScene" uid="uid://0dvmbhrkik8g" path="res://addons/rubber_charter/rulesets/mania/Mania.tscn" id="2_me28b"]
+[ext_resource type="Resource" uid="uid://5fiv3wet0boj" path="res://songs/test/data/Meta.tres" id="3_47wm0"]
+
+[node name="Editor" type="Control"]
+custom_minimum_size = Vector2(0, 63.07)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_rjg75")
+rulesets = Dictionary[String, PackedScene]({
+"Mania": ExtResource("2_me28b")
+})
+meta = ExtResource("3_47wm0")
+
+[node name="File" type="MenuButton" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+offset_right = 35.0
+offset_bottom = 31.0
+text = "File"
+alignment = 0
+switch_on_hover = true
+item_count = 1
+popup/item_0/id = 0
+
+[node name="MenuBar" type="MenuBar" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+
+[node name="File" type="PopupMenu" parent="MenuBar"]
+position = Vector2i(0, 30)
+size = Vector2i(139, 120)
+item_count = 5
+item_0/text = "New Chart"
+item_0/id = 0
+item_1/text = "Load Chart..."
+item_1/id = 1
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Save Chart"
+item_3/id = 3
+item_4/text = "Save Chart As..."
+item_4/id = 4
+
+[node name="Edit" type="PopupMenu" parent="MenuBar"]
+auto_translate_mode = 1
+position = Vector2i(0, 30)
+size = Vector2i(139, 120)
+item_count = 5
+item_0/text = "New Chart"
+item_0/id = 0
+item_1/text = "Load Chart..."
+item_1/id = 1
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Save Chart"
+item_3/id = 3
+item_4/text = "Save Chart As..."
+item_4/id = 4
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
